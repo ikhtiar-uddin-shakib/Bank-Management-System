@@ -72,15 +72,10 @@ def main():
 
     admin.create_account("Admin")
     admin.enable_loan_feature()
-    admin.disable_loan_feature()
-
-    if bank.total_balance < balance:
-        loan_feature_status = admin.disable_loan_feature()
-        print("Loan Feature Status:", loan_feature_status)
-    if bank.total_balance > balance:
-        
-        loan_feature_status = admin.enable_loan_feature()
-        print("Loan Feature Status:", loan_feature_status)
+ 
+    loan_feature_status = bank.loan_feature_enabled
+    print("Loan Feature Status:", loan_feature_status)
+    
 
     total_loan_amount = admin.get_total_loan_amount()
     print("Total Loan Amount:", total_loan_amount)
